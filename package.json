@@ -1,0 +1,25 @@
+{
+  "name": "electron-tahoe-fidelity-kit-example",
+  "version": "1.0.0",
+  "description": "![Tahoe Fidelity Kit Screenshot](./docs/screenshot.png)",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "dev": "run-p renderer main",
+    "renderer": "tsc -w --project tsconfig.json",
+    "main": "electronmon ./dist/main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^37.2.3",
+    "electronmon": "^2.0.3",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "electron-tahoe-fidelity-kit": "^1.0.2"
+  }
+}

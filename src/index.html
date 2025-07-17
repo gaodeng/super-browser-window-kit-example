@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    html,
+    body {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: row;
+      font-family: Arial, sans-serif;
+    }
+    
+   
+
+    .drag-region {
+      -webkit-app-region: drag;
+    }
+
+    .no-drag {
+      -webkit-app-region: no-drag;
+    }
+
+    .side-bar {
+      width: 205px;
+      padding: 10px;
+    }
+
+    .main-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border: solid 1px #cccccc44;
+      margin: 10px;
+      margin-left: 5px;
+      border-radius: 18px;
+      overflow: hidden;
+    }
+
+    .side-bar-content {
+      display: flex;
+      flex-direction: column;
+      /* border: solid 1px blue; */
+      height: 100%;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .side-bar-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      margin-top: 50px;
+    }
+    .side-bar-list li {
+      margin: 2px 10px;
+      padding: 8px;
+      border-radius: 8px;
+      font-size: 13px;
+      -webkit-app-region: no-drag;
+      cursor: default;
+    }
+    .side-bar-list li.active {
+      background-color: #cccccc44;
+    }
+    .side-bar-list li a {
+      text-decoration: none;
+      color:#000000;
+    }
+     @media (prefers-color-scheme: dark) {
+      body {
+        color: #ffffff;
+      }
+
+      .side-bar-list li a {
+        color: #ffffff;
+      }
+      .side-bar-list li.active {
+        background-color: #ffffff11;
+      }
+    }
+
+    #hello-msg {
+      font-size: 36px;
+      font-family: 'SF Pro Display', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="drag-region">
+  <div class="side-bar">
+    <div class="side-bar-content">
+      <ul class="side-bar-list">
+        <li class="active">aaa</li>
+        <li>bbb</li>
+        <li>ccc</li>
+        <li>ddd</li>
+      </ul>
+    </div>
+  </div>
+  <div class="main-content">
+    <h1 class="drag-region no-drag" id="hello-msg">Hello Electron</h1>
+  </div>
+  <script src="./index.js"></script>
+</body>
+
+</html>
