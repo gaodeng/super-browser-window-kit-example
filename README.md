@@ -1,10 +1,10 @@
-# electron-tahoe-fidelity-kit-example
-![Tahoe Fidelity Kit Screenshot](./docs/screenshot.png)
+# super-browser-window-kit-example
+![Super Browser Window Kit Screenshot](./docs/screenshot.png)
 
 ## Quick Start
 ```js
 import { app, BrowserWindow } from 'electron';
-import FidelityKit, { AutoresizingMask, GlassMaterialVariant } from "electron-tahoe-fidelity-kit";
+import SuperBrowserWindowKit, { AutoresizingMask, GlassMaterialVariant } from "super-browser-window-kit";
 
 /**
  * =====================[ LICENSE NOTICE ]=====================
@@ -25,9 +25,9 @@ app.whenReady().then(() => {
     show: false,
   });
   win.loadFile('index.html');
-  FidelityKit.setLicense(LICENSE_CODE)
-  FidelityKit.enableWindowCornerCustomization();
-  FidelityKit.setWindowCornerRadius(win.getNativeWindowHandle(), 26);
+  SuperBrowserWindowKit.setLicense(LICENSE_CODE)
+  SuperBrowserWindowKit.enableWindowCornerCustomization();
+  SuperBrowserWindowKit.setWindowCornerRadius(win.getNativeWindowHandle(), 26);
   win.show();
 });
 ```

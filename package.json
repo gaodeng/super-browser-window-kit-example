@@ -1,7 +1,7 @@
 {
-  "name": "electron-tahoe-fidelity-kit-example",
+  "name": "super-browser-window-kit-example",
   "version": "1.0.0",
-  "description": "![Tahoe Fidelity Kit Screenshot](./docs/screenshot.png)",
+  "description": "Example project demonstrating super-browser-window-kit for creating beautiful native-looking Electron windows",
   "main": "index.js",
   "directories": {
     "doc": "docs"
@@ -13,6 +13,10 @@
   },
   "author": "",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gaodeng/super-browser-window-kit-example.git"
+  },
   "devDependencies": {
     "electron": "^37.2.3",
     "electronmon": "^2.0.3",
@@ -20,6 +24,6 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
-    "electron-tahoe-fidelity-kit": "^1.0.8"
+    "super-browser-window-kit": "^1.0.8"
   }
 }
