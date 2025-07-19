@@ -24,6 +24,6 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
-    "super-browser-window-kit": "^1.0.8"
+    "super-browser-window-kit": "^1.0.12"
   }
 }
