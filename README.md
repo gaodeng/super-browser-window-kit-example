@@ -4,6 +4,8 @@
 ## Quick Start
 ```js
 import { app, BrowserWindow } from 'electron';
+import FidelityKit, { AutoresizingMask, GlassMaterialVariant } from "electron-tahoe-fidelity-kit";
+
 /**
  * =====================[ LICENSE NOTICE ]=====================
  * This license code is valid only for com.github.Electron test builds.
