@@ -1,5 +1,5 @@
 import { app, BrowserWindow, screen, ipcMain } from "electron";
-import SuperBrowserWindowKit, { AutoresizingMask, GlassMaterialVariant } from "super-browser-window-kit";
+import SuperBrowserWindowKit, { AutoresizingMask, GlassMaterialVariant, SystemColor } from "super-browser-window-kit";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -10,8 +10,8 @@ import { fileURLToPath } from "node:url";
  * It will NOT work in production environments.
  * For production use, please obtain a valid commercial license.
  *
- * Official website: https://botgem.com
- * Contact: hi@botgem.com
+ * Official website: https://bytemyth.com/super-browser-window-kit
+ * Contact: hi@bytemyth.com
  * ===========================================================
  */
 const LICENSE_CODE = "GCAYQ-ASCAG-Q76KA-ELXLU-HN8CV-3ZK8P-STALL-QLSVZ-9FFSX-3S2ZU-4QVSC-LLJ7U-KH6K7-G88HA-4TTDJ-58G9H-GZFY6-DDSDJ-L5ZB9-V7UMB-896CS-P9AVC-GULAB-EEAGQ-T77DP-DRBJN-G829M-ZZF9M-L2VEN-RZM8F-SQ4KW-3JLLB-MUVXP-TS3P8-7ZFZM-4L2P3-S4TTA-Z7EVY-Z5H9J-FYDUS-WQCYW-C92PZ-BB23J-QZEVP-QNQ"
@@ -53,11 +53,10 @@ app.whenReady().then(() => {
         return;
       }
 
-      const windowSize = mainWindow.getSize();
-      SuperBrowserWindowKit.addFullScreenOptionsMethod(mainWindow.getNativeWindowHandle());
       const glassId = SuperBrowserWindowKit.addGlassEffectView(mainWindow.getNativeWindowHandle(), {
         cornerRadius: 18,
       });
+      SuperBrowserWindowKit.setWindowBackgroundColor(mainWindow.getNativeWindowHandle(), SystemColor.WindowBackground);
       const [winWidth, winHeight] = mainWindow.getSize();
       SuperBrowserWindowKit.updateFrame(mainWindow.getNativeWindowHandle(), glassId, {
         width: 207,
@@ -71,45 +70,8 @@ app.whenReady().then(() => {
         glassId,
         AutoresizingMask.FlexibleHeight
       );
-      const bgId = SuperBrowserWindowKit.addBackgroundView(
-        mainWindow.getNativeWindowHandle(),
-        {
-          color: {
-            light: '#ffffff',
-            dark: '#111111',
-          },
-          // cornerRadius: 26,
-        },
-      );
-      SuperBrowserWindowKit._addon?.setFullScreenNotificationListener(
-        mainWindow.getNativeWindowHandle(),
-        (info: any) => {
-          console.log("Full Screen Notification:", info);
-          if (info.name === 'NSWindowDidEnterFullScreenNotification') {
-            // SuperBrowserWindowKit.setWindowCornerRadius(mainWindow.getNativeWindowHandle(), 0);
-            // SuperBrowserWindowKit.setBackgroundCornerRadius(mainWindow.getNativeWindowHandle(), bgId, 0);
-
-            SuperBrowserWindowKit.removeWindowToolbar(mainWindow.getNativeWindowHandle());
-
-          } else if (info.name === 'NSWindowWillExitFullScreenNotification') {
-            // SuperBrowserWindowKit.setWindowCornerRadius(mainWindow.getNativeWindowHandle(), 26);
-            // SuperBrowserWindowKit.setBackgroundCornerRadius(mainWindow.getNativeWindowHandle(), bgId, 26);
-
-
-            const windowSize = mainWindow.getSize();
-            SuperBrowserWindowKit.setWindowToolbar(mainWindow.getNativeWindowHandle(), "toolbar");
-            mainWindow.setSize(windowSize[0]!, windowSize[1]!);
-
-          }
-        }
-      );
-
-
-      SuperBrowserWindowKit.setWindowToolbar(mainWindow.getNativeWindowHandle(), "toolbar");
-      mainWindow.setSize(windowSize[0]!, windowSize[1]!); // Force redraw
-
-      mainWindow.setWindowButtonVisibility(true); // restore traffic lights
-      mainWindow.show(); // Show the window after glass effect is applied
+      
+      mainWindow.show(); 
     } catch (err) {
       console.error(err);
     }
