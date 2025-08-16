@@ -58,14 +58,14 @@ app.whenReady().then(() => {
       });
       SuperBrowserWindowKit.setWindowBackgroundColor(mainWindow.getNativeWindowHandle(), SystemColor.WindowBackground);
       const [winWidth, winHeight] = mainWindow.getSize();
-      SuperBrowserWindowKit.updateFrame(mainWindow.getNativeWindowHandle(), glassId, {
+      SuperBrowserWindowKit.setViewFrame(mainWindow.getNativeWindowHandle(), glassId, {
         width: 207,
         x: 9,
         y: 9,
         height: winHeight! - 18,
       });
-      SuperBrowserWindowKit.setVariant(mainWindow.getNativeWindowHandle(), glassId, GlassMaterialVariant.sidebar);
-      SuperBrowserWindowKit.setAutoresizingMask(
+      SuperBrowserWindowKit.setGlassVariant(mainWindow.getNativeWindowHandle(), glassId, GlassMaterialVariant.sidebar);
+      SuperBrowserWindowKit.setViewAutoresizingMask(
         mainWindow.getNativeWindowHandle(),
         glassId,
         AutoresizingMask.FlexibleHeight
