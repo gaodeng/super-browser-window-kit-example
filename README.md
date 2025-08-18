@@ -19,7 +19,7 @@ npm install super-browser-window-kit
 git clone https://github.com/gaodeng/super-browser-window-kit-example.git
 cd super-browser-window-kit-example
 npm install
-npm start
+npm run dev
 ```
 
 ## 🎯 Quick Start
