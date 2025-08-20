@@ -2,6 +2,8 @@
 
 ![super-browser-window-kit](./docs/screenshot.png)
 
+![super-browser-window-kit](./docs/liquid-glass.gif)
+
 🪄 Modern macOS window visual effects for Electron applications
 
 Native Liquid Glass effect View, native rounded window corners
