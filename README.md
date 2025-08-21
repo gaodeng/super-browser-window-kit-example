@@ -2,7 +2,7 @@
 
 ![super-browser-window-kit](./docs/screenshot.png)
 
-<video src="./docs/liquid-glass.mp4" autoPlay loop muted></video>
+<video src="[./docs/liquid-glass.mp4](https://github.com/user-attachments/assets/67ba0c96-c9cb-4f7e-b692-957c9bbeff69)" autoPlay loop muted></video>
 
 🪄 Modern macOS window visual effects for Electron applications
 
